@@ -9,8 +9,6 @@ move_to_pics = os.getenv("DESTINATION_PATH_PICS")
 move_to_docs = os.getenv("DESTINATION_PATH_DOCS")
 move_to_audio = os.getenv("DESTINATION_PATH_AUDIO")
 
-os.makedirs(move_to_vids, exist_ok=True)
-
 
 def move_files():
     file = os.listdir(my_path)
