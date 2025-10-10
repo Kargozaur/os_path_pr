@@ -40,10 +40,7 @@ def move_files():
         except Exception as e:
             print(e)
 
-
-try:
-    move_files()
     print("Done")
 
-except Exception as e:
-    print(e)
+
+move_files()
