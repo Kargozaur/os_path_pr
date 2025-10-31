@@ -24,7 +24,7 @@ def move_files():
         elif ext in (".jpeg", ".png", ".webp", "jpg"):
             dst = os.path.join(move_to_pics, f)
 
-        elif ext in (".docx", ".txt", ".json"):
+        elif ext in (".docx", ".txt", ".json", ".iso", ".pdf"):
             dst = os.path.join(move_to_docs, f)
 
         elif ext in (".mp3", ".wav", ".flac", ".ogg"):
