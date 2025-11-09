@@ -18,7 +18,7 @@ def move_files():
         ext = os.path.splitext(f)[1].lower()
         if os.path.isdir(src):
             continue
-        if ext in (".mp4", ".mov", ".avi"):
+        if ext in (".mp4", ".mov", ".avi", ".flv"):
             dst = os.path.join(move_to_vids, f)
 
         elif ext in (".jpeg", ".png", ".webp", "jpg"):
