@@ -1,13 +1,29 @@
-import os, shutil
-from dotenv import load_dotenv
+import os
+import shutil
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-load_dotenv()
 
-my_path = os.getenv("DOWNLOADS_PATH")
-move_to_vids = os.getenv("DESTINATION_PATH_VIDS")
-move_to_pics = os.getenv("DESTINATION_PATH_PICS")
-move_to_docs = os.getenv("DESTINATION_PATH_DOCS")
-move_to_audio = os.getenv("DESTINATION_PATH_AUDIO")
+class Settings(BaseSettings):
+    DOWNLOADS_PATH: str
+    DESTINATION_PATH_VIDS: str
+    DESTINATION_PATH_PICS: str
+    DESTINATION_PATH_DOCS: str
+    DESTINATION_PATH_AUDIO: str
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
+
+
+settings = Settings()  # ty:ignore[missing-argument]
+
+my_path = settings.DOWNLOADS_PATH
+move_to_vids = settings.DESTINATION_PATH_VIDS
+move_to_pics = settings.DESTINATION_PATH_PICS
+move_to_docs = settings.DESTINATION_PATH_DOCS
+move_to_audio = settings.DESTINATION_PATH_AUDIO
 
 
 def move_files():
